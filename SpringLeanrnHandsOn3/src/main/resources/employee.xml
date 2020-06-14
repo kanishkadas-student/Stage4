@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="emp1" class="com.cognizant.SpringLeanrnHandsOn3.model.Employee" scope="prototype"> 
+    	<property name="id" value="101" /> 
+    	<property name="name" value="Pabitra" />
+    	<property name="salary" value="10000.0" />
+    	<property name="department" value="CSE" /> 
+    </bean>
+
+    <bean id="emp2" class="com.cognizant.SpringLeanrnHandsOn3.model.Employee" scope="prototype"> 
+    	<property name="id" value="102" /> 
+    	<property name="name" value="Aman" />
+    	<property name="salary" value="20000.0" />
+    	<property name="department" value="CSE" /> 
+    </bean>
+    
+    <bean id="emp3" class="com.cognizant.SpringLeanrnHandsOn3.model.Employee" scope="prototype"> 
+    	<property name="id" value="103" /> 
+    	<property name="name" value="Praveen" />
+    	<property name="salary" value="30000.0" />
+    	<property name="department" value="IT" /> 
+    </bean>
+	
+	<bean id="emp4" class="com.cognizant.SpringLeanrnHandsOn3.model.Employee" scope="prototype"> 
+    	<property name="id" value="104" /> 
+    	<property name="name" value="Kanishka" />
+    	<property name="salary" value="40000.0" />
+    	<property name="department" value="MCA" /> 
+    </bean>
+    
+    
+    <bean id="employeeList" class="java.util.ArrayList"> 
+    	<constructor-arg>
+    		<list> 
+				<ref bean="emp1"></ref> 
+				<ref bean="emp2"></ref> 
+				<ref bean="emp3"></ref> 
+				<ref bean="emp4"></ref> 
+			</list> 
+		</constructor-arg> 
+	</bean>
+    
+
+    <!-- more bean definitions go here -->
+    
+    <bean id="dept1" class="com.cognizant.SpringLeanrnHandsOn3.model.Department" scope="prototype">
+		<property name="id" value="101" />
+		<property name="name" value="IT" />
+		<property name="location" value="Kolkata" />
+	</bean>
+	<bean id="dept2" class="com.cognizant.SpringLeanrnHandsOn3.model.Department"
+		scope="prototype">
+		<property name="id" value="102" />
+		<property name="name" value="CSE" />
+		<property name="location" value="Delhi" />
+	</bean>
+	
+	<bean id="dept3" class="com.cognizant.SpringLeanrnHandsOn3.model.Department"
+		scope="prototype">
+		<property name="id" value="103" />
+		<property name="name" value="MCA" />
+		<property name="location" value="Chennai" />
+	</bean>
+	
+	<bean id="departmentList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="dept1"></ref>
+				<ref bean="dept2"></ref>
+				<ref bean="dept3"></ref>
+				
+			</list>
+		</constructor-arg>
+	</bean>
+    
+
+</beans>
